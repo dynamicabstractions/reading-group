@@ -18,7 +18,7 @@
     opacity: 100%;
 }
 
-.title {
+.title, .topic, .speaker, .bio, .moderator {
     font-weight: 700;
 }
 

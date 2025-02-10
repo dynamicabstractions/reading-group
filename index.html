@@ -41,9 +41,10 @@
                   <li>
                     <h2>${event.Month}</h2>
                     <div><span class="title">Date & Time: ${event.Date} (${event.Day}) @ ${event.Time}</span></div>
-                    <div><span class="topic">Topic: ${event.Topic}</span></div>
-                    <div><span class="description">Speaker: <a href="${event.SpeakerWebsite}">${event.Speaker}</a>, ${event.SpeakerBio}</span></div>
-                    <div><span class="description">Moderator: <a href="${event.ModeratorWebsite}">${event.Moderator}</a></span></div>
+                    <div><span class="topic">Topic</span>: ${event.Topic}</div>
+                    <div><span class="speaker">Speaker</span>: <a href="${event.SpeakerWebsite}">${event.Speaker}</a></div>
+                    <div><span class="bio">Bio</span>: ${event.SpeakerBio}</div>
+                    <div><span class="moderator">Moderator</span>: <a href="${event.ModeratorWebsite}">${event.Moderator}</a></div>
                   </li>
               `;
               eventsContainer.innerHTML += eventHtml;
