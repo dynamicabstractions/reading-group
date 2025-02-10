@@ -40,8 +40,10 @@
               const eventHtml = `
                   <li>
                     <h2>${event.Month}</h2>
-                    <span class="title">${event.Date} - ${event.Topic}</span> 
-                    <span class="description">${event.Speaker}, ${event.SpeakerBio}</span>
+                    <div><span class="title">Date & Time: ${event.Date} (${event.Day}) @ ${event.Time}</span></div>
+                    <div><span class="topic">Topic: ${event.Topic}</span></div>
+                    <div><span class="description">Speaker: <a href="${event.SpeakerWebsite}">${event.Speaker}</a>, ${event.SpeakerBio}</span></div>
+                    <div><span class="description">Moderator: <a href="${event.ModeratorWebsite}">${event.Moderator}</a></span></div>
                   </li>
               `;
               eventsContainer.innerHTML += eventHtml;
