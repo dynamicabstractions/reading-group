@@ -34,7 +34,7 @@
     opacity: 100%;
 }
 
-.title, .topic, .speaker, .bio, .moderator, .reading-group-organizer {
+.title, .topic, .speaker, .bio, .speaker-note, .relevant-reading, .moderator, .reading-group-organizer {
     font-weight: 700;
 }
 
