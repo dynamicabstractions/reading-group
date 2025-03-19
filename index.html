@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.jsdelivr.net/npm/public-google-sheets-parser@latest"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script>
       const upcoming_events_div = document.getElementById("events");
       const parser = new PublicGoogleSheetsParser('1baJsSl_JBtqnyJkZ0peJtNbpGsc4WGlLervLNnCFaNw', { useFormat: true });
@@ -37,6 +42,16 @@
           Object.keys(readingsData).forEach((event_container_id) => {
             let eventsContainer = document.getElementById(event_container_id);
             readingsData[event_container_id].forEach(function(event) {
+
+              let videoHtml = '';
+              if (event.Recording && event.Recording.trim() !== '' && event.Recording.trim().toLowerCase() !== 'tbd') {
+                videoHtml = `
+                  <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/${event.Recording}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                `;
+              }
+
               const eventHtml = `
                   <li>
                     <h2>${event.Month}</h2>
@@ -49,6 +64,7 @@
                     <div><span class="relevant-reading">Reading</span>: ${event.Reading}</div>
                     <div><span class="moderator">Moderator</span>: ${event.Moderator}</div>
                     <div><span class="reading-group-organizer">Organizer(s)</span>: ${event.Organizer}</div>
+                    ${videoHtml}
                   </li>
               `;
               eventsContainer.innerHTML += eventHtml;
@@ -60,12 +76,6 @@
 
     <title>dynamic abstractions</title>
     <!-- <link rel="stylesheet" href="../styles.css">  -->
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <div class="grid-container">
