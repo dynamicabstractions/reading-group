@@ -47,8 +47,8 @@
 }
 
 section li {
-    list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
+    margin-left: 15px;
 }
 
 span.title {
