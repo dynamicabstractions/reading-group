@@ -53,6 +53,15 @@
 
 #reading_groups > li {
     list-style-type: none;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#reading_groups > li > div {
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
 
 #reading_groups > li > h2 {
