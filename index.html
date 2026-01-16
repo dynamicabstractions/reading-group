@@ -41,7 +41,7 @@
           // Success processing sheet --inject it into the HTML:
           Object.keys(readingsData).forEach((event_container_id) => {
             let eventsContainer = document.getElementById(event_container_id);
-            readingsData[event_container_id].forEach(function(event) {
+            readingsData[event_container_id].reverse().forEach(function(event) {
 
               let videoHtml = '';
               if (event.Recording && event.Recording.trim() !== '' && event.Recording.trim().toLowerCase() !== 'tbd') {
