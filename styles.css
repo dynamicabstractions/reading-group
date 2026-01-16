@@ -64,11 +64,18 @@
     font-weight: 600;
 }
 
-.speaker-note ul, .speaker-note ol,
-.relevant-reading ul, .relevant-reading ol {
-    list-style: disc;
+.speaker-note-div ul, .speaker-note-div ol,
+.relevant-reading-div ul, .relevant-reading-div ol {
     padding-left: 20px;
     margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.speaker-note-div li,
+.relevant-reading-div li {
+    list-style-type: circle;
+    padding-left: 5px;
+    margin-bottom: 4px;
 }
 
 section li {
