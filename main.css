@@ -11,6 +11,7 @@ body {
     align-items: center;
     font-size: 0.9rem;
     font-family: monospace;
+    overflow-x: hidden;
 }
 
 nav, ul {
@@ -93,6 +94,7 @@ nav, ul {
     grid-template-areas: "content figure";
     width: 100%;
     margin: auto;
+    overflow-x: hidden;
 }
 
 .content {
@@ -106,6 +108,7 @@ nav, ul {
     /* Light background for the content area */
     /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); Optional: Adds shadow for better focus */
     overflow-y: auto; /* Enables scrolling if content overflows */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .sticky-note {
