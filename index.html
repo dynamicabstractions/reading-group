@@ -41,7 +41,29 @@
           // Success processing sheet --inject it into the HTML:
           Object.keys(readingsData).forEach((event_container_id) => {
             let eventsContainer = document.getElementById(event_container_id);
+            let currentYear = null;
+
             readingsData[event_container_id].reverse().forEach(function(event) {
+              // Extract year from the Date field
+              let eventYear = null;
+              if (event.Date) {
+                // Try to extract year from date string (assuming format contains year)
+                const yearMatch = event.Date.match(/\b(20\d{2})\b/);
+                if (yearMatch) {
+                  eventYear = yearMatch[1];
+                }
+              }
+
+              // Insert year divider if year has changed
+              if (eventYear && eventYear !== currentYear) {
+                const yearDivider = `
+                  <li class="year-divider">
+                    <h1>${eventYear}</h1>
+                  </li>
+                `;
+                eventsContainer.innerHTML += yearDivider;
+                currentYear = eventYear;
+              }
 
               let videoHtml = '';
               if (event.Recording && event.Recording.trim() !== '' && event.Recording.trim().toLowerCase() !== 'tbd') {
