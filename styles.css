@@ -46,6 +46,11 @@
     display: block;
 }
 
+#reading_groups {
+    list-style: none;
+    padding-left: 0;
+}
+
 section li {
     list-style-type: none;
     margin-bottom: 30px;
