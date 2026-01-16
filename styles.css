@@ -51,6 +51,10 @@
     padding-left: 0;
 }
 
+#reading_groups > li {
+    list-style-type: none;
+}
+
 #reading_groups > li > h2 {
     margin-top: 0;
     margin-bottom: 15px;
@@ -58,6 +62,13 @@
     border-bottom: 1px solid #999;
     font-size: 1.5em;
     font-weight: 600;
+}
+
+.speaker-note ul, .speaker-note ol,
+.relevant-reading ul, .relevant-reading ol {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
 }
 
 section li {
